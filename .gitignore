@@ -1,0 +1,33 @@
+# Entorno virtual
+entorno/
+venv/
+.env
+
+# Archivos de configuración sensible
+.env
+*.env
+
+# Archivos de sistema
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de base de datos temporales o locales
+*.db
+*.sqlite
+
+# Archivos de logs o depuración
+*.log
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+
+# Imágenes subidas (opcional si no quieres subirlas)
+static/images/
+
+# Archivos creados por Flask o compiladores
+instance/
+*.egg-info/

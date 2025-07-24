@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inicio de Sesión</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Usuario</label>
+        <input type="text" name="usuario" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Contraseña</label>
+        <input type="password" name="clave" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Iniciar sesión</button>
+    <a href="{{ url_for('auth_bp.registro') }}" class="btn btn-link">¿No tienes cuenta? Regístrate</a>
+</form>
+{% endblock %}
