@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from models.instructor import Instructor
+from utils.enviar_correo import enviar_correo
 import random
 import string
 
@@ -32,7 +33,13 @@ def registro():
         )
         nuevo.save()
 
-        flash(f"Registro exitoso. Usuario: {usuario} / Clave: {clave}", "success")
+        exito = enviar_correo(correo, usuario, clave)
+
+        if exito:
+            flash(f"Registro exitoso. Se enviaron las credenciales al correo {correo}", "success")
+        else:
+            flash(f"Registro exitoso, pero ocurrió un error al enviar el correo.", "warning")
+
         return redirect(url_for("auth_bp.login"))
 
     return render_template("registro.html")

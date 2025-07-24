@@ -25,7 +25,7 @@ app.register_blueprint(guia_bp)
 @app.route("/")
 def home():
     return render_template("inicio.html")  
-code 
+
 if __name__ == "__main__":
     print("🚀 Servidor Flask cargado correctamente.")
     app.run(port=5000, host="0.0.0.0", debug=True)
