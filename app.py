@@ -3,7 +3,6 @@ from flask_mongoengine import MongoEngine
 from dotenv import load_dotenv
 import os
 
-# Cargar variables de entorno
 load_dotenv()
 
 app = Flask(__name__)

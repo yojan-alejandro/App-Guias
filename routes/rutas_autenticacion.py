@@ -5,13 +5,11 @@ import string
 
 auth_bp = Blueprint("auth_bp", __name__)
 
-# 🔐 Generador de usuario y clave simple
 def generar_credenciales(nombre):
     usuario = ''.join(nombre.lower().split()) + str(random.randint(100, 999))
     clave = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
     return usuario, clave
 
-# 🧾 Página de registro
 @auth_bp.route("/registro", methods=["GET", "POST"])
 def registro():
     if request.method == "POST":
@@ -39,7 +37,6 @@ def registro():
 
     return render_template("registro.html")
 
-# 🔐 Login
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -59,7 +56,6 @@ def login():
 
     return render_template("login.html")
 
-# 🚪 Logout
 @auth_bp.route("/logout")
 def logout():
     session.clear()
